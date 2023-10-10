@@ -96,7 +96,7 @@ class ScreenHome extends StatelessWidget {
                 children: [
                   
                  ListTile(
-                  title: Text('kotha'),
+                  title: Text('sita ram'),
                   subtitle: Text('staring dulqar'),
                   textColor: Colors.white,
                   leading: Icon(Icons.movie),
@@ -118,8 +118,8 @@ class ScreenHome extends StatelessWidget {
                 children: [
                   
                  ListTile(
-                  title: Text('kotha'),
-                  subtitle: Text('staring dulqar'),
+                  title: Text('kaduva'),
+                  subtitle: Text('staring prithvi'),
                   textColor: Colors.white,
                   leading: Icon(Icons.movie),
                   iconColor: Colors.white,
@@ -162,8 +162,8 @@ class ScreenHome extends StatelessWidget {
                 children: [
                   
                  ListTile(
-                  title: Text('kotha'),
-                  subtitle: Text('staring dulqar'),
+                  title: Text('neram'),
+                  subtitle: Text('staring nivin'),
                   textColor: Colors.white,
                   leading: Icon(Icons.movie),
                   iconColor: Colors.white,
@@ -206,8 +206,8 @@ class ScreenHome extends StatelessWidget {
                 children: [
                   
                  ListTile(
-                  title: Text('kotha'),
-                  subtitle: Text('staring dulqar'),
+                  title: Text('kathi'),
+                  subtitle: Text('staring vijay'),
                   textColor: Colors.white,
                   leading: Icon(Icons.movie),
                   iconColor: Colors.white,
