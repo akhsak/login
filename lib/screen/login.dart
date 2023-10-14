@@ -32,10 +32,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
         key:_formkey,
           child: Center(
             child: Column(
-            
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment:CrossAxisAlignment.center,
-            children:[              // Padding(
-              //   padding: const EdgeInsets.symmetric(vertical: 10),          // child:
+            children:[      
                TextFormField(
                 controller: _usernameController,
                 decoration: InputDecoration(
@@ -45,12 +44,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   hintText: 'Username',
                 ), 
                 validator: (value){
-                  //  if(_isDataMatched)
-                  //  {
-                  //   return null;
-                  //  }else{
-                  //   return 'error';
-                  //  }
+                 
                   if(value==null||value.isEmpty)
                   {
                     return 'please enter username';
@@ -59,6 +53,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   }
                 },
               ),
+                      
             const SizedBox( height: 20),
               TextFormField(
                 controller: _passwordControllere,
@@ -70,12 +65,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   hintText: 'password',
                 ),
                 validator: (value){
-                  //  if(_isDataMatched)
-                  //  {
-                  //   return null;
-                  //  }else{
-                  //   return 'error';
-                  //  }
+                 
                   if(value==null||value.isEmpty)
                   {
                     return 'please enter password';
@@ -145,25 +135,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
         ),
       );
 
-      //Alert Dialog
-      //showDialog(context: ctx,
-      //  builder: (ctx1){
-      //   return AlertDialog(
-      //     title: Text('Error'),
-      //     content: Text(_ErrorMessage),
-      //     actions: [
-      //       TextButton(onPressed: (){
-      //         Navigator.of(ctx1).pop();
-      //       }, 
-      //       child: Text('Close'),
-      //       ),
-      //     ],
-      //   );
-      // });
-      // setState(() {
-      //   _isDataMatched=false;
-      // });
-      // //show Text
+
     }
   }
 }
