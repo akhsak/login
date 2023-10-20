@@ -26,7 +26,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
       child: Scaffold(
         
         appBar:AppBar(title: Text("login page"),
-        actions: [Icon(Icons.account_balance_wallet_rounded)],
+        
           
         ),
         body: Padding(
@@ -35,10 +35,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
         key:_formkey,
           child: Center(
             child: Column(
-              
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment:CrossAxisAlignment.center,
-            children:[              
+            children:[              // Padding(
+              //   padding: const EdgeInsets.symmetric(vertical: 10),          // child:
                TextFormField(
                 controller: _usernameController,
                 decoration: InputDecoration(
