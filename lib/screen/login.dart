@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:login_page_1/main.dart';
 import 'package:login_page_1/screen/home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ScreenLogin extends StatefulWidget {
   const  ScreenLogin ({Key?key}):super(key: key);
@@ -23,7 +25,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
     return SafeArea(
       child: Scaffold(
         
-        appBar:AppBar(
+        appBar:AppBar(title: Text("login page"),
+        actions: [Icon(Icons.account_balance_wallet_rounded)],
           
         ),
         body: Padding(
@@ -32,9 +35,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
         key:_formkey,
           child: Center(
             child: Column(
+              
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment:CrossAxisAlignment.center,
-            children:[      
+            children:[              
                TextFormField(
                 controller: _usernameController,
                 decoration: InputDecoration(
@@ -53,7 +57,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   }
                 },
               ),
-                      
             const SizedBox( height: 20),
               TextFormField(
                 controller: _passwordControllere,
@@ -65,7 +68,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   hintText: 'password',
                 ),
                 validator: (value){
-                 
+                  
                   if(value==null||value.isEmpty)
                   {
                     return 'please enter password';
@@ -77,7 +80,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
               ),
                const SizedBox( height: 20),
                Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 mainAxisAlignment: MainAxisAlignment.center,
+              
                 children: [
                   Visibility(
                     visible:!_isDataMatched,
@@ -111,12 +115,13 @@ class _ScreenLoginState extends State<ScreenLogin> {
        ),
     ); 
   }
-  void checkLogin(BuildContext ctx){
+  void checkLogin(BuildContext ctx)async{
     final _username=_usernameController.text;
     final _password=_passwordControllere.text;
     if(_username=="akhsa"&&_password=="12345") {
     print('Username pass match');
-    
+    final _sharedprf= await SharedPreferences.getInstance();
+   await  _sharedprf.setBool(keyvalue, true);
       //goto home
      Navigator.of(ctx)
      .pushReplacement(MaterialPageRoute(builder:(ctx)=> ScreenHome()));
@@ -135,7 +140,25 @@ class _ScreenLoginState extends State<ScreenLogin> {
         ),
       );
 
-
+      //Alert Dialog
+      //showDialog(context: ctx,
+      //  builder: (ctx1){
+      //   return AlertDialog(
+      //     title: Text('Error'),
+      //     content: Text(_ErrorMessage),
+      //     actions: [
+      //       TextButton(onPressed: (){
+      //         Navigator.of(ctx1).pop();
+      //       }, 
+      //       child: Text('Close'),
+      //       ),
+      //     ],
+      //   );
+      // });
+      // setState(() {
+      //   _isDataMatched=false;
+      // });
+      // //show Text
     }
   }
 }

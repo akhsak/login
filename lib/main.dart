@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_page_1/screen/splash.dart';
-
+const keyvalue="";
 void main() {
   runApp(const MyApp());
   
